@@ -1,0 +1,99 @@
+@import '../../../assets/scss/colors.scss';
+
+:host {
+  ::ng-deep button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 53px 198px 53px 254px;
+  flex-direction: column;
+}
+
+.mat-mdc-table {
+  box-shadow: none;
+}
+
+.lista {
+  width: 100%;
+}
+
+.carregando {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.mdc-data-table__header-row {
+  width: 227px;
+  height: 46px;
+}
+
+.mat-mdc-header-cell {
+  text-align: initial;
+  padding: 16px 60px 14px 42px;
+  border: 1px solid $cadet-blue;
+}
+
+.mat-mdc-cell {
+  padding-left: 39px;
+  border: 1px solid $cadet-blue;
+}
+
+td.mat-mdc-cell.mdc-data-table__cell.cdk-cell.cdk-column-icons.mat-column-icons {
+  border: none;
+  padding: 0px 0 0px 10px
+}
+th.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell.cdk-column-icons.mat-column-icons {
+  border: none;
+}
+
+.mdc-data-table__row:last-child .mdc-data-table__cell {
+  border: 1px solid $cadet-blue;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.lista-header {
+  color: $tertiary-color;
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-family: 'Koh Santepheap';
+  font-weight: 700;
+  width: 87.44%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #EEF3F7;
+}
+
+.lista-filtro {
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  font-family: 'Koh Santepheap';
+  font-weight: 400;
+  width: 87.44%;
+  padding-bottom: 10px;
+  row-gap: 5px;
+  h1 {
+    margin-bottom: 5px;
+  }
+}
+
+::ng-deep.mdc-line-ripple::before, .mdc-line-ripple::after {
+  display: none;
+}

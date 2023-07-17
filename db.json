@@ -1,0 +1,68 @@
+{
+  "clients": [
+    {
+      "nome": "Bruno",
+      "email": "bruno@gmail.com",
+      "cpf": "10200012122",
+      "endereco": "Rua José Nonato Ribeiro",
+      "estado": "MG",
+      "cep": "38400066",
+      "cidade": "Uberlândia",
+      "nomeCartao": "Breno",
+      "dataExpiracaoMes": "04",
+      "dataExpiracaoAno": "2027",
+      "numeroCartao": "1111111111111111",
+      "codigoSeguranca": "123",
+      "dataCriacao": "2023-07-17T18:22:40.919Z",
+      "id": 1
+    },
+    {
+      "nome": "Tales",
+      "email": "tales@email.com.br",
+      "cpf": "13123123131",
+      "endereco": "Rua Santos Dumont",
+      "estado": "MG",
+      "cep": "38400062",
+      "cidade": "Uberlândia",
+      "nomeCartao": "Tales",
+      "dataExpiracaoMes": "05",
+      "dataExpiracaoAno": "2026",
+      "numeroCartao": "0000000000000000",
+      "codigoSeguranca": "123",
+      "dataCriacao": "2023-07-17T16:30:29.520Z",
+      "id": 2
+    },
+    {
+      "nome": "Juvenal",
+      "email": "juvenal@click.com",
+      "cpf": "12345678910",
+      "endereco": "Rua Armando Lombardi",
+      "estado": "MG",
+      "cep": "38408046",
+      "cidade": "Uberlândia",
+      "nomeCartao": "Juvenal",
+      "dataExpiracaoMes": "06",
+      "dataExpiracaoAno": "2030",
+      "numeroCartao": "3333333333333333",
+      "codigoSeguranca": "321",
+      "dataCriacao": "2023-07-17T17:34:45.568Z",
+      "id": 3
+    },
+    {
+      "nome": "Robson",
+      "email": "robson@yahoo.com.br",
+      "cpf": "19999900011",
+      "endereco": "Avenida Lázara Alves Ferreira",
+      "estado": "MG",
+      "cep": "38408066",
+      "cidade": "Uberlândia",
+      "nomeCartao": "Robson",
+      "dataExpiracaoMes": "08",
+      "dataExpiracaoAno": "2025",
+      "numeroCartao": "9999999999999999",
+      "codigoSeguranca": "169",
+      "dataCriacao": "2023-07-17T18:49:29.720Z",
+      "id": 4
+    }
+  ]
+}

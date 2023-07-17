@@ -1,0 +1,51 @@
+@import "../../../assets/scss/colors.scss";
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: $primary-color;
+  display: flex;
+  width: 100%;
+  height: 69px;
+  padding: 28px 32px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header-title {
+  background-color: $secondary-color;
+  padding: 39px 0px 0px 255px;
+  color: #000;
+  font-family: "Koh Santepheap";
+  font-size: 64px;
+  height: 137px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+
+  .link {
+    color: $secondary-color;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+  }
+
+  p {
+    color: $secondary-color;
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 5px;
+    cursor: default;
+  }
+}

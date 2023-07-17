@@ -1,0 +1,117 @@
+<app-header [title]="'Cadastro'"></app-header>
+<form [formGroup]="forms" class="form" (ngSubmit)="submitForm()">
+  <div class="form-container">
+    <label>Nome</label>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Digite seu nome" formControlName="nome">
+    </mat-form-field>
+    <label>E-mail</label>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Digite seu melhor e-mail" formControlName="email">
+    </mat-form-field>
+    <label>CPF</label>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Digite CPF aqui" formControlName="cpf" mask="000.000.000-00">
+    </mat-form-field>
+    <div class="cep">
+      <div class="input">
+        <label>Endereço</label>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Digite endereço" formControlName="endereco">
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>Estado</label>
+        <mat-form-field>
+          <mat-select formControlName="estado" (selectionChange)="getCidades($event.value)">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let estado of estados" [value]="estado.sigla">
+              {{estado.sigla}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>CEP</label>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="00.000-000" mask="00.000-000" formControlName="cep" [(ngModel)]="buscarCep">
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="getByCep(buscarCep)" type="button">
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>Cidade</label>
+        <mat-form-field>
+          <mat-select formControlName="cidade">
+            <mat-option *ngIf="estadoBusca"></mat-option>
+            <mat-option *ngFor="let cidade of cidades" [value]="cidade.nome">
+              {{cidade.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="formaPagamento-header">
+    <h1>Forma de pagamento</h1>
+  </div>
+  <mat-radio-group>
+    <mat-radio-button value="1" color="primary" [checked]="radio0" (click)="changeRadio(0)">Cartão de Crédito</mat-radio-button>
+    <mat-radio-button value="2" color="primary" [checked]="radio1" (click)="changeRadio(1)">Boleto Bancário</mat-radio-button>
+  </mat-radio-group>
+  <div class="formaPagamento-content">
+    <div class="left" *ngIf="radio0">
+      <div class="inputCard">
+        <label>Nome do cartão</label>
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName="nomeCartao" placeholder="Nome impresso no cartão">
+        </mat-form-field>
+      </div>
+      <div class="inputCard">
+        <label>Número do cartão</label>
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName="numeroCartao" placeholder="0000 0000 0000 0000" mask="0000 0000 0000 0000">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="right" *ngIf="radio0">
+      <div class="inputDate">
+        <label>Data de Expiração</label>
+        <mat-form-field>
+          <mat-select formControlName="dataExpiracaoMes" placeholder="Mês">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let mes of meses" [value]="mes">
+              {{mes}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="inputDate input-right">
+        <mat-form-field>
+          <label></label>
+          <mat-select formControlName="dataExpiracaoAno" placeholder="Ano">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let ano of anos" [value]="ano">
+              {{ano}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="inputCard">
+        <label>Código de segurança</label>
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName="codigoSeguranca" placeholder="XXX" maxlength="3">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="formaPagamento-confirmar">
+    <span>
+      {{radio0 ? 'Seu cartão será debitado em R$ 49,00' : 'Seu boleto será enviado por e-mail no valor de R$44,90'}}
+    </span>
+    <button type="submit">Realizar matrícula</button>
+    <p>Informações seguras e criptografadas</p>
+  </div>
+</form>
+<app-footer></app-footer>
